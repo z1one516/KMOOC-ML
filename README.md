@@ -1,1 +1,1 @@
-# KMOOC-ML
+# KMOOC-ML-hard-coding
