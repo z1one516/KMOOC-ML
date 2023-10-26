@@ -206,7 +206,7 @@ def getXy(filename, bipolar=True, standardized=False, shuffled=False):
         sys.exit('Having a problem in reading {}'.format(filename))
     
     x, y = data[:, :2], data[:, 2]
-    y = y.astype(np.int)
+    y = y.astype(int)
 
     if shuffled:
         random_gen = np.random.RandomState(1)
@@ -878,7 +878,9 @@ def plot_decision_regions(X, y, clf_predict, resolution=0.01, scaled = True):
         Z = clf_predict.predict(np.array([xx1.ravel(), xx2.ravel()]).T)
     #print("ending classifier.predict()")
     Z = Z.reshape(xx1.shape)
-    plt.contourf(xx1, xx2, Z, alpha=0.3, cmap=cmap)
+
+    plt.contourf(xx1, xx2, Z, alpha=0.3, cmap='viridis')  # Replace 'red' with a valid colormap name
+
     #plt.xlim(xx1.min(), xx1.max())
     #plt.ylim(xx2.min(), xx2.max())
 
